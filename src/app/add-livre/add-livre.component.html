@@ -1,0 +1,31 @@
+<div class="container">
+    <div>
+        <br>
+    <h2>Ajouter un Livre :</h2>
+    </div>
+
+    <form  >
+        <div class="col-sm-2 col-md-2 col-lg-2">
+        <label >ID Livre</label>
+        <input type="text" name="idLivre" class="form-control" [(ngModel)]="newLivre.idL" >
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4" >
+        <label >Nom Livre</label>
+        <input type="text" name="nomLivre" class="form-control" [(ngModel)]="newLivre.nomL" >
+        </div>
+        <div class="col-sm-10 col-md-2 col-lg-10">
+            <label >Description Livre</label>
+            <textarea name="descriptionLivre" class="form-control" [(ngModel)]="newLivre.description"></textarea> 
+            </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+        <label >Prix Livre</label>
+        <input type="number"  name="prixLivre" class="form-control" [(ngModel)]="newLivre.prix">
+        </div>
+       
+        <div class="mt-2">
+        <button type="submit"  (click)="addLivre()" class="btn btn-success">Ajouter</button>
+        </div>
+        </form>
+        </div>
+
+    

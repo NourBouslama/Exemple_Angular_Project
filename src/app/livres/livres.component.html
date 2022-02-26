@@ -1,0 +1,32 @@
+<br><br>
+<p-table [value]="livres" responsiveLayout="scroll">
+    <ng-template pTemplate="caption">
+        <div class="flex align-items-center justify-content-between">
+            <h2>Listes Des Livres</h2>
+            
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+        
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-livre>
+        <tr>
+            <td>{{livre.nomL}}</td>
+            <td>{{livre.description}}</td>
+            <td>{{livre.prix }}  TND</td>
+            <td><button pButton pRipple type="button" icon="pi pi-pencil" class="p-button-rounded p-button-success" [routerLink]="['/updateLivre',livre.idL]"></button></td>
+            <td><button pButton pRipple type="button" icon="pi pi-trash" class="p-button-rounded p-button-danger" (click)="supprimerLivre(livre)"></button></td>
+
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+        <div class="flex align-items-center justify-content-between">
+            In total there are {{livres ? livres.length : 0 }} livres.
+        </div>
+    </ng-template>
+</p-table>
